@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Unset HTTP_PROXY configurations
+if [ -z "$HEXBOARD_USE_PROXY" ]; then
+    unset HTTP_PROXY
+    unset HTTPS_PROXY
+    unset http_proxy
+    unset https_proxy
+fi
+
+
+# Call image run script
+/usr/libexec/s2i/run
